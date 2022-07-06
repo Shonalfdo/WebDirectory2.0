@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DirectoryTwo.Models.DirectoryEntry>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Prot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubDom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TopDom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubDom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopDom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

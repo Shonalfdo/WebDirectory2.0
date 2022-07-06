@@ -1,0 +1,58 @@
+﻿@model DirectoryTwo.Models.DirectoryEntry
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DirectoryEntry</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Prot" class="control-label"></label>
+                <input asp-for="Prot" class="form-control" />
+                <span asp-validation-for="Prot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubDom" class="control-label"></label>
+                <input asp-for="SubDom" class="form-control" />
+                <span asp-validation-for="SubDom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dom" class="control-label"></label>
+                <input asp-for="Dom" class="form-control" />
+                <span asp-validation-for="Dom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TopDom" class="control-label"></label>
+                <input asp-for="TopDom" class="form-control" />
+                <span asp-validation-for="TopDom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiteName" class="control-label"></label>
+                <input asp-for="SiteName" class="form-control" />
+                <span asp-validation-for="SiteName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiteType" class="control-label"></label>
+                <input asp-for="SiteType" class="form-control" />
+                <span asp-validation-for="SiteType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
